@@ -28,27 +28,25 @@ As an example let's add a DHT temperature and humidiy sensor.
 
 * Modify config.lua
 
-- Uncomment externalTemp and externalHum lines under readerId array
-
-- Uncomment influxMeasurement[cfg.readerId.externalTemp] and influxMeasurement[cfg.readerId.externalHum]; these define the data field names in your DB
-
-- Uncomment captureDelta[cfg.readerId.externalTemp] and captureDelta[cfg.readerId.externalHum]; if your reading does not change by this amount in comparison to the last, it will not be submitted to the DB.
+	* Uncomment externalTemp and externalHum lines under readerId array
+	* Uncomment influxMeasurement[cfg.readerId.externalTemp] and influxMeasurement[cfg.readerId.externalHum]; these define the data field names in your DB
+	* Uncomment captureDelta[cfg.readerId.externalTemp] and captureDelta[cfg.readerId.externalHum]; if your reading does not change by this amount in comparison to the last, it will not be submitted to the DB.
 
 * Modify main.lua
-
--- Uncomment require('reader_temp_hum'); this includes the script file which contains the function to query the DHT sensor
+	
+	* Uncomment require('reader_temp_hum'); this includes the script file which contains the function to query the DHT sensor
 
 * Modify pins.lua
 
-- Ensure the dht pin definition matches up with your hardware (or move your DHT data lead to pin 3)
+	* Ensure the dht pin definition matches up with your hardware (or move your DHT data lead to pin 3)
 
 * Modify read_round.lua
-
-- Uncomment lines under "-- External temp and humidity"; this will check the last returned value from the sensor and queue it for submission
+	
+	* Uncomment lines under "-- External temp and humidity"; this will check the last returned value from the sensor and queue it for submission
 
 * Modify reader_slots.lua
 
-- Uncomment cfg.readerId.externalTemp
+	* Uncomment cfg.readerId.externalTemp
 
 That's it, upload the modified files to your NodeMCU, `require('main')` to execure the main loop and you shoudl start to see DHT sensor values read.  To add other types of sensor use the DHT code as a template, modifying to account for the dirrerent way in which your sensor works.
 
