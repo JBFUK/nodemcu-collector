@@ -32,17 +32,17 @@ function doReadRound()
   
   -- External temp and humidity
   
-  elseif (readerSlots[appStatus.lastRoundSlot] == cfg.readerId.externalTemp) then
+  --elseif (readerSlots[appStatus.lastRoundSlot] == cfg.readerId.externalTemp) then
     -- This reader gets cfg.readerId.externalHum also
-    local tempValue, humValue = readTempHum()
+  --  local tempValue, humValue = readTempHum()
 
-    if (tempValue and greaterThanDelta(cfg.readerId.externalTemp, tempValue)) then
-      addToDataQueue(cfg.readerId.externalTemp, tempValue)
-    end
+  --  if (tempValue and greaterThanDelta(cfg.readerId.externalTemp, tempValue)) then
+  --    addToDataQueue(cfg.readerId.externalTemp, tempValue)
+  --  end
 
-    if (humValue and greaterThanDelta(cfg.readerId.externalHum, humValue)) then
-      addToDataQueue(cfg.readerId.externalHum, humValue)
-    end
+  --  if (humValue and greaterThanDelta(cfg.readerId.externalHum, humValue)) then
+  --    addToDataQueue(cfg.readerId.externalHum, humValue)
+  --  end
   
 
   -- Other sensor

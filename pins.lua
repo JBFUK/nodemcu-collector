@@ -1,8 +1,8 @@
 -- 0: GPIO16 
 -- 1: GPIO5
 -- 2: GPIO4
--- 3: GPIO0 DHT Temp hum sensor (?)
--- 4: GPIO2 
+-- 3: GPIO0
+-- 4: GPIO2 DHT Temp hum sensor 
 -- 5: GPIO14 
 -- 6: GPIO12 
 -- 7: GPIO13 
